@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>saoma</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+    (function () {
+      var currClientWidth,
+        fontValue,
+        originWidth;
+      originWidth = 750;//ui设计稿的宽度，一般750或640
+      __resize();
+
+      window.addEventListener('resize', __resize, false);
+      function __resize() {
+        currClientWidth = document.documentElement.clientWidth;
+        fontValue = ((75 * currClientWidth) / originWidth).toFixed(2);
+        document.documentElement.style.fontSize = fontValue + 'px';
+      }
+    })();
+  </script>
+</html>
